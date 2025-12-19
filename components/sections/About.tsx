@@ -68,7 +68,7 @@ export default function About() {
               <div className="text-purple-400 text-7xl font-bold mb-2" style={{ fontFamily: 'monospace' }}>
                 {/* <span className="inline-block"> */}
                 <div className="flex flex-col items-start text-4xl leading-tight">
-                  <Image src="/images/logo.png" alt="Company Logo" width={300} height={300} />
+                  <Image src="/images/logo-default.png" alt="Company Logo" width={300} height={300} />
                 </div>
                 {/* </span> */}
               </div>
