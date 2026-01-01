@@ -10,7 +10,7 @@ export default function Hero() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
     >
       {/* Animated Background Gradient */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-transparent to-blue-600/20"
         animate={{
           background: [
@@ -40,7 +40,7 @@ export default function Hero() {
           ease: "easeInOut"
         }}
       />
-      
+
       <motion.div
         className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl"
         animate={{
@@ -76,7 +76,7 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
         >
           {/* Badge */}
-          <motion.div 
+          <motion.div
             className="mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -88,7 +88,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Heading */}
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -102,7 +102,7 @@ export default function Hero() {
           </motion.h1>
 
           {/* Description */}
-          <motion.p 
+          <motion.p
             className="text-gray-400 text-lg md:text-xl mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -111,20 +111,18 @@ export default function Hero() {
             We create amazing applications with attractive and functional UI
           </motion.p>
 
-          {/* CTA Button */}
+
           <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3  text-white rounded-full backdrop-blur-md border border-gray-900/25 shadow-lg hover:bg-black/60 transition font-medium items-center gap-2"
+            onClick={() => {
+              document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-gray-400 hover:text-white"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <div className='flex flex-col justify-center items-center gap-4'>
-               <span>Scroll Down</span>
-            <ArrowDown size={20} />
-            </div>
+            <ArrowDown size={28} />
           </motion.button>
+
         </motion.div>
       </div>
     </section>
