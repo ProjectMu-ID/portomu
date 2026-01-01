@@ -40,43 +40,43 @@ export default function Navbar() {
         : 'bg-gradient-to-b from-black/40 via-black/10 to-transparent'
         }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center h-18">
-          {/* Mobile Menu Button */}
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Header */}
+        <div className="flex items-center justify-between h-16">
+
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo-dark.png"
+              width={80}
+              height={80}
+              alt="Logo"
+              priority
+            />
+          </Link>
+
+          {/* Mobile menu button */}
           <button
-            onClick={toggleMenu}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition"
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <Image src="/images/logo-dark.png" width={90} height={90} alt='logo' />
-            {/* <span className="text-primary">[</span>
-            Logo
-            <span className="text-primary">]</span> */}
-          </Link>
-
-          <div className="hidden md:flex flex-1"></div>
-
-          {/* Desktop Navigation */}
+          {/* Desktop nav */}
           <div className="hidden md:flex gap-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative text-white font-medium transition-colors duration-300 hover:text-purple-400 group"
+                className="relative font-medium text-white hover:text-purple-400 transition group"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 group-hover:w-full transition-all duration-500 ease-out"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
           </div>
-
-          {/* Spacer */}
-          {/* <div className="w-16 md:w-0"></div> */}
         </div>
       </div>
 
